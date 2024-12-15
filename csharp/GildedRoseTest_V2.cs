@@ -22,7 +22,7 @@ namespace csharp
         [Test]
         [TestCase(2)]
         [TestCase(-1)]
-        public void should_not_decrease_Quality_if_already_zero(int sellIn)
+        public void should_not_decrease_Quality_if_already_five(int sellIn)
         {
             Item item = newItem("", sellIn, 5);
             updateItems(item);
