@@ -52,6 +52,7 @@
     <Compile Include="BackstageUpdater.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
+    <Compile Include="GildedRoseTest_V2.cs" />
     <Compile Include="IItemUpdater.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
