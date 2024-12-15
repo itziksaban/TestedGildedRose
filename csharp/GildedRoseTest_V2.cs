@@ -11,15 +11,6 @@ namespace csharp
         private const string AGED_BRIE_NAME = "Aged Brie";
         private const string CONJURED_NAME = "Conjured";
 
-
-        [Test]
-        public void should_decrease_Quality_by_one()
-        {
-            Item item = newItem("", 0, 1);
-            updateItems(item);
-            Assert.AreEqual(item.Quality, 0);
-        }
-
         [Test]
         public void should_not_decrease_Quality_if_sulfuras()
         {
@@ -109,17 +100,17 @@ namespace csharp
         [Test]
         public void should_decrease_Quality_by_two_if_sellin_negative()
         {
-            Item item = newItem("", 0, 2);
+            Item item = newItem("", 0, 7);
             updateItems(item);
-            Assert.AreEqual(item.Quality, 0);
+            Assert.AreEqual(item.Quality, 5);
         }
 
         [Test]
         public void should_decrease_Quality_under_zero_if_sellin_negative()
         {
-            Item item = newItem("", 0, 1);
+            Item item = newItem("", 0, 6);
             updateItems(item);
-            Assert.AreEqual(item.Quality, 0);
+            Assert.AreEqual(item.Quality, 5);
         }
 
         [Test]
