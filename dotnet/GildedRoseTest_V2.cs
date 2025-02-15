@@ -20,11 +20,12 @@ namespace csharp
         }
 
         [DataTestMethod]
-        [DataRow(2)]
-        [DataRow(-1)]
-        public void should_not_decrease_Quality_if_already_five(int sellIn)
+        [DataRow(0, 6)]
+        [DataRow(2, 5)]
+        [DataRow(-1, 5)]
+        public void should_not_decrease_Quality_if_already_five(int sellIn, int quality)
         {
-            Item item = newItem("", sellIn, 5);
+            Item item = newItem("", sellIn, quality);
             updateItems(item);
             Assert.AreEqual(item.Quality, 5);
         }
@@ -101,14 +102,6 @@ namespace csharp
         public void should_decrease_Quality_by_two_if_sellin_negative()
         {
             Item item = newItem("", 0, 7);
-            updateItems(item);
-            Assert.AreEqual(item.Quality, 5);
-        }
-
-        [TestMethod]
-        public void should_decrease_Quality_under_zero_if_sellin_negative()
-        {
-            Item item = newItem("", 0, 6);
             updateItems(item);
             Assert.AreEqual(item.Quality, 5);
         }
